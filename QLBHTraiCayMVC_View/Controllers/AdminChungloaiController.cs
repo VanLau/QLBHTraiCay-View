@@ -9,10 +9,12 @@ using System.Web.Mvc;
 
 namespace QLBHTraiCayMVC_View.Controllers
 {
+    [RoutePrefix("quan-ly/chung-loai")]
     public class AdminChungloaiController : Controller
     {
         #region Đọc tất cả chủng loại
         // GET: AdminChungLoai
+        [Route("danh-sach-chung-loai")]
         public async Task<ActionResult> Index()
         {
             try
@@ -34,6 +36,7 @@ namespace QLBHTraiCayMVC_View.Controllers
 
         #region Đọc chi tiết chủng loại
         // GET: AdminLoai/Details/5
+        [Route("chi-tiet-chung-loai/{id?}")]
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null || id < 1) return RedirectToAction("Index");
@@ -58,6 +61,7 @@ namespace QLBHTraiCayMVC_View.Controllers
         #endregion
 
         #region Search chủng loại theo Mã hoặc Tên
+        [Route]
         public async Task<ActionResult> Search(string search)
         {
             try
@@ -89,6 +93,7 @@ namespace QLBHTraiCayMVC_View.Controllers
 
         #region Thêm chủng Loại
         // GET: AdminLoai/Create
+        [Route("them-moi-chung-loai")]
         public ActionResult Create()
         {
             try
@@ -128,6 +133,7 @@ namespace QLBHTraiCayMVC_View.Controllers
 
         #region Sửa Chủng loại
         // GET: AdminChungLoai/Edit/5
+        [Route("sua-chung-loai/{id?}")]
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null || id < 1) return RedirectToAction("Index");
@@ -178,6 +184,7 @@ namespace QLBHTraiCayMVC_View.Controllers
 
         #region Xóa chủng loại
         // GET: AdminChungLoai/Delete/5
+        [Route("xoa-chung-loai/{id?}")]
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null || id < 1) return RedirectToAction("Index");

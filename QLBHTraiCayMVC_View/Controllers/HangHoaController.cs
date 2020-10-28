@@ -15,6 +15,7 @@ namespace QLBHTraiCayMVC_View.Controllers
 
         #region Hang Hóa Trong Nước
         //GET: HangHoaTN 
+        [Route()]
         public async Task<ActionResult> HangHoaIndex(int? page, int? CLID)
         {
             try
@@ -81,6 +82,7 @@ namespace QLBHTraiCayMVC_View.Controllers
         #endregion
 
         #region Shop
+        [Route("danh-sach-hang-hoa")]
         public async Task<ActionResult> Shop(int? page)
         {
             try
@@ -106,6 +108,7 @@ namespace QLBHTraiCayMVC_View.Controllers
         #endregion
 
         #region Hàng hóa theo Loại
+        [Route("hang-hoa/theo-loai/{id?}")]
         public async Task<ActionResult> TraCuuTheoLoaiAjax(int? id, int? page)
         {
             if (id == null || id < 1) return RedirectToAction("HangHoaIndex", "HangHoa");
@@ -137,7 +140,8 @@ namespace QLBHTraiCayMVC_View.Controllers
         }
         #endregion
 
-        #region Chi tiết sản phẩm   
+        #region Chi tiết sản phẩm 
+        [Route("san-pham/{name}-{id?}")]
         public async Task<ActionResult> ChiTietSanPham(int? id, string name)
         {
             if (id == null || id < 1) return RedirectToAction("HangHoaIndex", "HangHoa");
@@ -158,6 +162,7 @@ namespace QLBHTraiCayMVC_View.Controllers
 
         #region Search hàng hóa theo tên
         [HttpPost]
+        [Route("tim-kiem-hang-hoa")]
         public async Task<ActionResult> Search(int? page, string search)
         {
             try
@@ -193,6 +198,5 @@ namespace QLBHTraiCayMVC_View.Controllers
 
         }
         #endregion
-
     }
 }

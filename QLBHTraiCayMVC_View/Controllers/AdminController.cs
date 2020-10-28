@@ -9,8 +9,11 @@ using System.Web.Mvc;
 
 namespace QLBHTraiCayMVC_View.Controllers
 {
+    [RoutePrefix("quan-ly")]
     public class AdminController : Controller
     {
+        // GET: Admin
+        [Route]
         public async Task<ActionResult> Index()
         {
             string url1 = "admin-hang-hoa/doc-tat-ca";

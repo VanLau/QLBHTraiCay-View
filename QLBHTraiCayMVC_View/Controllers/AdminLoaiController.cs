@@ -10,10 +10,12 @@ using X.PagedList;
 
 namespace QLBHTraiCayMVC_View.Controllers
 {
+    [RoutePrefix("quan-ly/loai-hang")]
     public class AdminLoaiController : Controller
     {
         #region Đọc tất cả loại
         // GET: AdminLoai
+        [Route("danh-sach-loai-hang")]
         public async Task<ActionResult> Index()
         {
             try
@@ -35,6 +37,7 @@ namespace QLBHTraiCayMVC_View.Controllers
 
         #region Đọc chi tiết loại
         // GET: AdminLoai/Details/5
+        [Route("chi-tiet-loai-hang/{id?}")]
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null || id < 1) return RedirectToAction("Index");
@@ -90,6 +93,7 @@ namespace QLBHTraiCayMVC_View.Controllers
 
         #region Select Danh sách Chủng Loại
         // GET:
+        [Route]
         public async Task<SelectList> TaoDanhSachChungLoai(int IDChon = 0)
         {
             string url = "admin-chung-loai/doc-tat-ca";
@@ -109,6 +113,7 @@ namespace QLBHTraiCayMVC_View.Controllers
 
         #region Thêm Loại
         // GET: AdminLoai/Create
+        [Route("them-moi-loai-hang")]
         public async Task<ActionResult> Create()
         {
             try
@@ -152,6 +157,7 @@ namespace QLBHTraiCayMVC_View.Controllers
 
         #region Sửa loại
         // GET: AdminLoai/Edit/5
+        [Route("sua-loai-hang/{id?}")]
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null || id < 1) return RedirectToAction("Index");
@@ -204,6 +210,7 @@ namespace QLBHTraiCayMVC_View.Controllers
 
         #region Xóa loại
         // GET: AdminLoai/Delete/5
+        [Route("xoa-loai-hang/{id?}")]
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null || id < 1) return RedirectToAction("Index");

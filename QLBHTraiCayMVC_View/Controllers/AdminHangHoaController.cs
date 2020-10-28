@@ -14,10 +14,12 @@ using X.PagedList;
 
 namespace QLBHTraiCayMVC_View.Controllers
 {
+    [RoutePrefix("quan-ly/hang-hoa")]
     public class AdminHangHoaController : Controller
     {
         #region Danh sách hàng hóa
         // GET: AdminHangHoa
+        [Route("danh-sach-hang-hoa")]
         public async Task<ActionResult> Index()
         {
             try
@@ -41,6 +43,7 @@ namespace QLBHTraiCayMVC_View.Controllers
 
         #region Chi tiết hàng hóa
         // GET: AdminHangHoa/Details/5
+        [Route("chi-tiet-hang-hoa/{id?}")]
         public async Task<ActionResult> Details(int? id)
         {
             try
@@ -68,6 +71,7 @@ namespace QLBHTraiCayMVC_View.Controllers
         #endregion
 
         #region Search hàng hóa theo Mã hoặc Tên
+        [Route]
         public async Task<ActionResult> Search(string search)
         {
             try
@@ -118,6 +122,7 @@ namespace QLBHTraiCayMVC_View.Controllers
 
         #region Thêm hàng hóa
         // GET: AdminHangHoa/Create
+        [Route("them-moi-hang-hoa")]
         public async Task<ActionResult> Create()
         {
             try
@@ -157,6 +162,7 @@ namespace QLBHTraiCayMVC_View.Controllers
 
         #region Upload hình ảnh
         // GET: UploadFile/Upload/1
+        [Route("upload-hinh-hang-hoa/{id?}")]
         public async Task<ActionResult> Upload(int? id)
         {
             if (id == null || id < 1) return RedirectToAction("Index");
@@ -275,6 +281,7 @@ namespace QLBHTraiCayMVC_View.Controllers
 
         #region Sửa hàng hóa
         // GET: AdminHangHoa/Edit/5
+        [Route("sua-hang-hoa/{id?}")]
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null || id < 1) return RedirectToAction("Index");
@@ -321,6 +328,7 @@ namespace QLBHTraiCayMVC_View.Controllers
 
         #region Xóa hàng hóa
         // GET: AdminHangHoa/Delete/5
+        [Route("xoa-hang-hoa/{id?}")]
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null || id < 1) return RedirectToAction("Index");

@@ -13,6 +13,7 @@ namespace QLBHTraiCayMVC_View.Controllers
     {
         #region Đọc tất cả hóa đơn
         // GET: AdminHoaDon
+        [Route("danh-sach-hoa-don")]
         public async Task<ActionResult> Index()
         {
             try
@@ -34,6 +35,7 @@ namespace QLBHTraiCayMVC_View.Controllers
 
         #region Đọc chi tiết hóa đơn
         // GET: AdminHoaDon/Details/5
+        [Route("chi-tiet-hoa-don/{id?}")]
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null || id < 1) return RedirectToAction("Index");
@@ -62,6 +64,7 @@ namespace QLBHTraiCayMVC_View.Controllers
         #endregion
 
         #region Search chủng loại theo Tên Khách hàng
+        [Route]
         public async Task<ActionResult> Search(string search)
         {
             try
@@ -93,6 +96,7 @@ namespace QLBHTraiCayMVC_View.Controllers
 
         #region Sửa Hóa Đơn
         // GET: AdminHoaDon/Edit/5
+        [Route("sua-hoa-don/{id?}")]
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null || id < 1) return RedirectToAction("Index");

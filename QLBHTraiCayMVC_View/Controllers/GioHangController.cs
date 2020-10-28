@@ -13,6 +13,7 @@ namespace QLBHTraiCayMVC_View.Controllers
     {
         #region Giỏ hàng
         // GET: GioHang
+        [Route("gio-hang")]
         public ActionResult Index()
         {
             try
@@ -38,6 +39,7 @@ namespace QLBHTraiCayMVC_View.Controllers
         #region Thêm Vào giỏ hàng
         // POST: GioHang/Create
         [HttpPost]
+        [Route("gio-hang-them")]
         public ActionResult AddToCart(int HangHoaID, int SoLuong = 1)
         {
             try
@@ -63,9 +65,10 @@ namespace QLBHTraiCayMVC_View.Controllers
         }
         #endregion
 
-        #region Xửa giỏ hàng
+        #region Sửa giỏ hàng
         // POST: GioHang/Edit/5
         [HttpPost]
+        [Route("gio-hang-sua")]
         public ActionResult Edit(int HangHoaID, int SoLuong)
         {
             try
@@ -85,6 +88,7 @@ namespace QLBHTraiCayMVC_View.Controllers
         #region Xóa giỏ hàng
         // POST: GioHang/Delete/5
         [HttpPost]
+        [Route("gio-hang-xoa")]
         public ActionResult Delete(int HangHoaID)
         {
             try
@@ -103,12 +107,14 @@ namespace QLBHTraiCayMVC_View.Controllers
 
         #region Xử lý đơn đặt hàng
         [HttpGet]
+        [Route("dat-hang")]
         public ActionResult DatHang()
         {
             return View();
         }
 
         [HttpPost]
+        [Route("dat-hang")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DatHang(HoaDonDTO hoaDon)
         {
