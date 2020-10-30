@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace QLBHTraiCayMVC_View.Controllers
 {
+    [RoutePrefix("quan-ly/hoa-don")]
     public class AdminHoaDonController : Controller
     {
         #region Đọc tất cả hóa đơn

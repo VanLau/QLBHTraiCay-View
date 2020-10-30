@@ -11,8 +11,7 @@ using X.PagedList;
 namespace QLBHTraiCayMVC_View.Controllers
 {
     public class HangHoaController : Controller
-    {
-
+    {       
         #region Hang Hóa Trong Nước
         //GET: HangHoaTN 
         [Route()]
